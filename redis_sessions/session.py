@@ -17,7 +17,7 @@ class RedisServer():
 
         if settings.SESSION_REDIS_SENTINEL_LIST is not None:
             self.connection_type = 'sentinel'
-        if settings.SESSION_REDIS_CONNECTION_OBJECT is not None:
+        elif settings.SESSION_REDIS_CONNECTION_OBJECT is not None:
             self.connection_type = 'connection_object'
         else:
             if settings.SESSION_REDIS_POOL is not None:
